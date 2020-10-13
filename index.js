@@ -131,7 +131,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>' + museum).addTo(map);
+        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong> - ' + info + '</br>' + museum).addTo(map);
     });
 
     map.on('mouseleave', 'digitale-angebote-2', function () {
