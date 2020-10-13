@@ -120,7 +120,7 @@ map.on('load', () => {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var title = e.features[0].properties.project_title;
         var info = e.features[0].properties.info;
-        var museum = e.features[0].properties.museum ;
+        var museum = e.features[0].properties.museum;
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
