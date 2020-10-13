@@ -31,6 +31,9 @@ body {
 }
 #git{
     width: 20px;
+    display: flex;
+    flex-direction: row;
+    float: right ;
 }
 #teaser{
     margin: 0 auto;
