@@ -33,7 +33,7 @@ body {
     width: 20px;
     display: flex;
     flex-direction: row;
-    float: left ;
+    position: inherit;
 }
 #teaser{
     margin: 0 auto;
