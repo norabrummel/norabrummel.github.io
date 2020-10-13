@@ -61,7 +61,7 @@ map.on('load', () => {
         },
         paint: {
             'circle-radius': 1.6,
-            'circle-color': 'rgb(87,116,104)',
+            'circle-color': '#BBBCBB',
         },
     });
     map.addSource('digitale-angebote-2', {
