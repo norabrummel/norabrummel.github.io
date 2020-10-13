@@ -29,7 +29,7 @@ body {
     padding-top: 200px;
     font-weight: 700;   
 }
-#git{
+/*#git{
     width: 20px;
     display: flex;
     flex-direction: row;
@@ -37,7 +37,7 @@ body {
     float: left;
     left: 600px;
     top: 20px;
-}
+}*/
 #teaser{
     margin: 0 auto;
     height: 700px;
