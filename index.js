@@ -75,7 +75,7 @@ map.on('load', () => {
         source: 'digitale-angebote-2',
         type: 'circle',
         paint: {
-            'circle-radius': 3.2,
+            'circle-radius': 4.2,
             'circle-color': [
                 'match',
                 ['get', 'category'],
@@ -106,6 +106,38 @@ map.on('load', () => {
     });
     toggleSidebar('left');
     /* map.addControl(new mapboxgl.Navigation()); */
+    
+    // Create a popup, but don't add it to the map yet.
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+    
+    map.on('mouseenter', 'digitale-angebote-2', function (e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var title = e.features[0].properties.project_title;
+        var info = e.features[0].properties.info;
+        var museum = e.features[0].properties.museum ;
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>' + museum).addTo(map);
+    });
+
+    map.on('mouseleave', 'digitale-angebote-2', function () {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
 
     document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
