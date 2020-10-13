@@ -31,8 +31,8 @@ body {
 }
 #git{
     width: 40px;
-    margin: 0 auto;
-    margin-top: -200px;
+    position: inherit;
+    bottom: 500px;
 }
 #teaser{
     margin: 0 auto;
