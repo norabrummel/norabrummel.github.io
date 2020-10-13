@@ -33,7 +33,7 @@ body {
     width: 20px;
     display: flex;
     flex-direction: row;
-    float: right ;
+    float: left ;
 }
 #teaser{
     margin: 0 auto;
