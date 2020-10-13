@@ -30,8 +30,9 @@ body {
     font-weight: 700;   
 }
 #git{
-    width: 64px;
+    width: 40px;
     margin: 0 auto;
+    margin-top: -200px;
 }
 #teaser{
     margin: 0 auto;
