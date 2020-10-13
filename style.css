@@ -27,8 +27,11 @@ body {
     text-align: center !important;
     font-size: 60px;
     padding-top: 200px;
-    font-weight: 700;
-    
+    font-weight: 700;   
+}
+#git{
+    width: 64px;
+    margin: 0 auto;
 }
 #teaser{
     margin: 0 auto;
