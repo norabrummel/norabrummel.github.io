@@ -39,7 +39,7 @@ function toggleSidebar(id) {
     elem.className = classes.join(' ');
 }
 
-/* function filterBy(launch) {
+/*function filterBy(launch) {
     var filters = ['==', 'launch', launch];
     map.setFilter('digitale-angebote', filters);
 } */
@@ -108,12 +108,11 @@ map.on('load', () => {
     toggleSidebar('left');
     /* map.addControl(new mapboxgl.Navigation()); */
 
-    /* document
-        .getElementById('timeslider')
-        .addEventListener('input', function(e) {
-            var launch = parseInt(e.target.value, 10);
-            filterBy(launch);
-    }); */
+    document.getElementById('timeslider').addEventListener('input', function(e) {
+            var launch = parseInt(e.target.value);
+            map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
+            document.getElementById('min').innerHTML = launch;
+    }); 
 });
 /* smooth scrolling */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
