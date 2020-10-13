@@ -64,7 +64,7 @@ map.on('load', () => {
             'circle-color': 'rgb(87,116,104)',
         },
     });
-    map.addSource('digitale-angebote', {
+    map.addSource('digitale-angebote-2', {
         type: 'geojson',
         data: 'https://norabrummel.github.io/norabrummel.github.io/angebote.geojson',
         buffer: 0,
@@ -72,8 +72,8 @@ map.on('load', () => {
         generateId: true,
     });
     map.addLayer({
-        id: 'digitale-angebote',
-        source: 'digitale-angebote',
+        id: 'digitale-angebote-2',
+        source: 'digitale-angebote-2',
         type: 'circle',
         paint: {
             'circle-radius': 3.2,
