@@ -35,6 +35,8 @@ body {
     flex-direction: row;
     position: inherit;
     float: left;
+    left: 600px;
+    top: 20px;
 }
 #teaser{
     margin: 0 auto;
