@@ -39,10 +39,9 @@ function toggleSidebar(id) {
     elem.className = classes.join(' ');
 }
 
-/*function filterBy(launch) {
-    var filters = ['==', 'launch', launch];
-    map.setFilter('digitale-angebote', filters);
-} */
+function filterBy(category) {
+   map.setFilter('digitale-angebote-2', ['==', ['string', ['get', 'category']], category]); 
+} 
 
 map.on('load', () => {
     map.addSource('museen-deutschland', {
