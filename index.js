@@ -103,6 +103,7 @@ map.on('load', () => {
                 '#ccc',
             ],
         },
+        filter: ['==', ['number', ['get', 'launch']], 1998]
     });
     toggleSidebar('left');
     /* map.addControl(new mapboxgl.Navigation()); */
