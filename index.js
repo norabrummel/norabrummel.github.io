@@ -148,12 +148,7 @@ map.on('load', () => {
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
-
-    document.getElementById('timeslider').addEventListener('input', function(e) {
-            var launch = parseInt(e.target.value);
-            map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
-            document.getElementById('min').innerHTML = launch;   
-    }); 
+    timeslide();
 });
 /* smooth scrolling */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -163,6 +158,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         });
     });
 });
+function timeslide() {
+   document.getElementById('timeslider').addEventListener('input', function(e) {
+            var launch = parseInt(e.target.value);
+            map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
+            document.getElementById('min').innerHTML = launch;   
+    });  
+};
 
 /* hide layer museen-gesamt */
 function hideLayer() {
@@ -173,11 +175,12 @@ function hideLayer() {
         map.setLayoutProperty('museen-gesamt', 'visibility', 'visible');
     }
 }
+/* show all projects, no matter if launch has value or not */
 function hideFilter() {
-    if(true) {
-         //show all features (even without launch date)
-         map.setFilter('digitale-angebote-2', null);
-    }else {
-       map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]); 
-    }
-}
+    var isChecked = document.getElementById('switchAngebote').checked;  
+        if(isChecked) {    
+           map.setFilter('digitale-angebote-2', null); 
+        }else {
+           timeslide(); 
+        }
+};
