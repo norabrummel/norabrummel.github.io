@@ -181,6 +181,9 @@ function hideFilter() {
     var isChecked = document.getElementById('switchAngebote').checked;  
         if(isChecked) {    
            map.setFilter('digitale-angebote-2', null); 
+           var slider = document.getElementById('timeslider');
+           slider.value = 2020;
+           document.getElementById('min').innerHTML = slider.value;      
         }else {
            timeslide(); 
         }
