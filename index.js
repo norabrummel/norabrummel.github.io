@@ -120,6 +120,7 @@ map.on('load', () => {
         closeButton: false,
         closeOnClick: false
     });
+    var popupClose = new mapboxgl.Popup();
     
     map.on('mouseenter', 'digitale-angebote-2', function (e) {
         // Change the cursor style as a UI indicator.
@@ -171,7 +172,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        new mapboxgl.Popup().setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')</br><a href="' + link + '" target="_blank" style="word-wrap: break-word;" class="angebote-link">' + link + '</a></br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
+        popupClose.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')</br><a href="' + link + '" target="_blank" style="word-wrap: break-word;" class="angebote-link">' + link + '</a></br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
     });
     timeslide();
 });
