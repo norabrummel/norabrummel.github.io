@@ -120,7 +120,13 @@ map.on('load', () => {
         closeButton: false,
         closeOnClick: false
     });
-    var popupClose = new mapboxgl.Popup();
+    var popupClose = new mapboxgl.Popup()
+        popupClose.on('close', function(e) {
+            map.flyTo({
+              center: [10.348, 51.358], // starting position [lng, lat]
+              zoom: 4.88, // starting zoom  
+            });
+        });
     
     map.on('mouseenter', 'digitale-angebote-2', function (e) {
         // Change the cursor style as a UI indicator.
@@ -201,7 +207,7 @@ function hideLayer() {
     } else {
         map.setLayoutProperty('museen-gesamt', 'visibility', 'visible');
     }
-}
+};
 /* show all offers, no matter if launch has value or not */
 function hideFilter() {
     var isChecked = document.getElementById('switchAngebote').checked;  
