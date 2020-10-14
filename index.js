@@ -148,8 +148,12 @@ map.on('load', () => {
 
     document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
+            if(launch == 2020) {
+                map.setFilter('digitale-angebote-2', null);
+            } else {
             map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
-            document.getElementById('min').innerHTML = launch;           
+            }
+            document.getElementById('min').innerHTML = launch;   
     }); 
 });
 /* smooth scrolling */
