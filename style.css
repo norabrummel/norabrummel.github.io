@@ -60,6 +60,20 @@ body {
     /*display: flex;
     flex-direction: row;*/
 }
+/*.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    border-radius: 6px;
+    padding: 5px 0;
+    z-index: 1;
+}
+.tooltip .tooltiptext::after {
+  content: "";
+  margin-left: -5px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}*/
 #min {
     margin-top: -35px;
     padding-right: 370px;

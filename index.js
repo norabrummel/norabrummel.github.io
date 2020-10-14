@@ -43,6 +43,8 @@ function filterBy(category) {
    map.setFilter('digitale-angebote-2', ['==', ['string', ['get', 'category']], category]); 
 } 
 
+map.addControl(new mapboxgl.NavigationControl());
+
 map.on('load', () => {
     map.addSource('museen-deutschland', {
         type: 'geojson',
@@ -105,7 +107,6 @@ map.on('load', () => {
         filter: ['==', ['number', ['get', 'launch']], 1998]
     });
     toggleSidebar('left');
-    /* map.addControl(new mapboxgl.Navigation()); */
     
     // Create a popup, but don't add it to the map yet.
     var popup = new mapboxgl.Popup({
@@ -143,7 +144,7 @@ map.on('load', () => {
     document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
             map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
-            document.getElementById('min').innerHTML = launch;
+            document.getElementById('min').innerHTML = launch;           
     }); 
 });
 /* smooth scrolling */
