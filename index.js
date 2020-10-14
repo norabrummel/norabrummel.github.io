@@ -48,6 +48,10 @@ function filterBy(category) {
    var slider = document.getElementById('timeslider');
    slider.value = 2020;
    document.getElementById('min').innerHTML = slider.value;  
+   const popup = document.getElementsByClassName('mapboxgl-popup');
+    if ( popup.length ) {
+        popup[0].remove();
+    }
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
