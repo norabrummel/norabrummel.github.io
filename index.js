@@ -130,6 +130,7 @@ map.on('load', () => {
         var title = e.features[0].properties.project_title;
         var info = e.features[0].properties.info;
         var museum = e.features[0].properties.museum;
+        var link = e.features[0].properties.link;
         /*title.style.color = document.getElementById('digitale-angebote-2').getPaintProperty('circle-color');*/
 
         // Ensure that if the map is zoomed out such that multiple
@@ -141,12 +142,36 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')</br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
+        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')</br><a href="' + link + '" target="_blank" style="word-wrap: break-word;" class="angebote-link">' + link + '</a></br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
     });
 
     map.on('mouseleave', 'digitale-angebote-2', function () {
         map.getCanvas().style.cursor = '';
         popup.remove();
+    });
+    map.on('click', 'digitale-angebote-2', function (e) {
+        // Change the cursor style as a UI indicator.
+        map.getCanvas().style.cursor = 'pointer';
+        map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 7 });
+
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var launch = e.features[0].properties.launch;
+        var title = e.features[0].properties.project_title;
+        var info = e.features[0].properties.info;
+        var museum = e.features[0].properties.museum;
+        var link = e.features[0].properties.link;
+        /*title.style.color = document.getElementById('digitale-angebote-2').getPaintProperty('circle-color');*/
+
+        // Ensure that if the map is zoomed out such that multiple
+        // copies of the feature are visible, the popup appears
+        // over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        new mapboxgl.Popup().setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')</br><a href="' + link + '" target="_blank" style="word-wrap: break-word;" class="angebote-link">' + link + '</a></br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
     });
     timeslide();
 });

@@ -233,6 +233,13 @@ input:checked + .slider:before {
 .sidebar-content p:hover {
     opacity: 0.75;
 }
+.angebote-link {
+    text-decoration: none; 
+    color: #537895;
+}
+.angebote-link:hover { 
+    color: #6897BB;
+}
 #apps {
     /*background-color: #b10b0b;*/
     color: #b10b0b;
