@@ -47,7 +47,7 @@ function filterBy(category) {
    });
    var slider = document.getElementById('timeslider');
    slider.value = 2020;
-   document.getElementById('min').innerHTML = slider.value;    
+   document.getElementById('min').innerHTML = slider.value;  
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
