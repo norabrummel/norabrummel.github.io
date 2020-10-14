@@ -45,6 +45,8 @@ function filterBy(category) {
       center: [10.348, 51.358], // starting position [lng, lat]
       zoom: 4.88, // starting zoom  
    });
+   var slider = document.getElementById('timeslider');
+   slider.value = 2020;
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
