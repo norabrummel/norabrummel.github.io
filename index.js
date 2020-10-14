@@ -41,6 +41,10 @@ function toggleSidebar(id) {
 
 function filterBy(category) {
    map.setFilter('digitale-angebote-2', ['==', ['string', ['get', 'category']], category]); 
+   map.flyTo({
+      center: [10.348, 51.358], // starting position [lng, lat]
+      zoom: 4.88, // starting zoom  
+   });
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -119,6 +123,7 @@ map.on('load', () => {
         map.getCanvas().style.cursor = 'pointer';
 
         var coordinates = e.features[0].geometry.coordinates.slice();
+        var launch = e.features[0].properties.launch;
         var title = e.features[0].properties.project_title;
         var info = e.features[0].properties.info;
         var museum = e.features[0].properties.museum;
@@ -133,7 +138,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ')').addTo(map);
+        popup.setLngLat(coordinates).setHTML('<strong>' + title + '</strong></br>' + info + '</br>(' + museum + ') </br><span style="font-size: 10px;">'+ launch + '</span>').addTo(map);
     });
 
     map.on('mouseleave', 'digitale-angebote-2', function () {
