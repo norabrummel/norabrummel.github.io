@@ -211,7 +211,6 @@ input:checked + .slider:before {
     width: 95%;
     height: 95%;
     font-size: 32px;
-    color: gray;
     padding-top: 17px;
     border-radius: 10px;
 }
@@ -223,6 +222,27 @@ input:checked + .slider:before {
     margin: 0;
     height: 40px;
     cursor: pointer;
+}
+.accordion {
+    background-color: white;
+    cursor: pointer;
+ /* padding: 18px;*/
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.panel {
+  cursor: default;
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: scroll;
+}
+.panel p {
+    font-size: 13px;
+    height: 150px;
 }
 #erkundungen {
     /*background-color: #e55d5d;*/

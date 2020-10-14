@@ -39,6 +39,42 @@ function toggleSidebar(id) {
     elem.className = classes.join(' ');
 }
 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+};
+
+/* The Problem: I want to implement an accordion for the different categories in the sidebar that toggles a list of all the features in the respective category. 
+
+var listingEl = document.getElementsByClassName('panel');
+
+function renderListings(features) {
+    listingEl.innerHTML = '';
+    if (features.length) {
+        features.forEach(function (feature) {
+        var prop = feature.properties;
+        var item = document.createElement('p');
+        item.textContent = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')';
+    });
+    listingEl.appendChild(item);
+    });   
+}
+*/
+
 function filterBy(category) {
    map.setFilter('digitale-angebote-2', ['==', ['string', ['get', 'category']], category]); 
    map.flyTo({
@@ -52,6 +88,12 @@ function filterBy(category) {
     if ( popup.length ) {
         popup[0].remove();
     }
+    /*
+    var features = map.queryRenderedFeatures({ layers: ['digitale-angebote-2'] });
+    if (features) {
+        // Populate features for the listing overlay.
+        renderListings(features);
+    }*/
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
