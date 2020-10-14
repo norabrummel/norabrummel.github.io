@@ -151,12 +151,7 @@ map.on('load', () => {
 
     document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
-            if(launch == 2020) {
-                //show all features (even without launch date)
-                map.setFilter('digitale-angebote-2', null);
-            } else {
             map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
-            }
             document.getElementById('min').innerHTML = launch;   
     }); 
 });
@@ -176,5 +171,13 @@ function hideLayer() {
         map.setLayoutProperty('museen-gesamt', 'visibility', 'none');
     } else {
         map.setLayoutProperty('museen-gesamt', 'visibility', 'visible');
+    }
+}
+function hideFilter() {
+    if(true) {
+         //show all features (even without launch date)
+         map.setFilter('digitale-angebote-2', null);
+    }else {
+       map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]); 
     }
 }

@@ -55,7 +55,7 @@ body {
 #timeslider {
     width: 350px;
     position: absolute;
-    right: 270px;
+    right: 310px;
     margin-top: -35px;
     /*display: flex;
     flex-direction: row;*/
@@ -75,13 +75,13 @@ body {
   visibility: visible;
 }*/
 #min {
-    margin-top: -35px;
+    margin-top: -38px;
     padding-right: 370px;
     font-weight: 700;
     font-size: 11pt;
 }
 #max {
-    margin-top: -35px;
+    margin-top: -38px;
     padding-right: 232px;
     font-weight: 700;
     font-size: 11pt;
@@ -91,6 +91,7 @@ body {
     display: flex;
     flex-direction: row;
     float: right ;
+    padding-right: 33px;
 }
 .radioOption {
     padding-right: 10px;
@@ -119,7 +120,9 @@ body {
   width: 0;
   height: 0;
 }
-
+#alle-angebote {
+    padding-right: 120px;
+}
 /* The slider */
 .slider {
   position: absolute;  

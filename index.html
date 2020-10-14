@@ -22,7 +22,7 @@
                 <!--<a href="https://github.com/norabrummel/norabrummel.github.io" target="_blank"><img src="GitHub-Mark-64px.png" alt="git" id="git"></a>-->
                 <div class="timeline">
                     <p id="min">1998</p>
-                    <input class="tooltip" id="timeslider" type="range" min="1998" max="2020" step="1" value="1998"/>
+                    <input id="timeslider" type="range" min="1998" max="2020" step="1" value="1998"/>
                     <!--<span class="tooltiptext" id="active-count">Tooltip text</span>-->
                     <p id="max">2020</p>
                 </div>
@@ -30,6 +30,13 @@
                     <p>alle Museen</p>
                     <label class="switch">
                           <input type="checkbox" onchange="hideLayer()">
+                          <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="radioOption" id="alle-angebote">
+                    <p>alle Angebote</p>
+                    <label class="switch">
+                          <input type="checkbox" onchange="hideFilter()">
                           <span class="slider round"></span>
                     </label>
                 </div>
