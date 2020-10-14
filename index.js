@@ -175,7 +175,7 @@ function hideLayer() {
         map.setLayoutProperty('museen-gesamt', 'visibility', 'visible');
     }
 }
-/* show all projects, no matter if launch has value or not */
+/* show all offers, no matter if launch has value or not */
 function hideFilter() {
     var isChecked = document.getElementById('switchAngebote').checked;  
         if(isChecked) {    
