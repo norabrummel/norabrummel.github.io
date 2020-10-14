@@ -149,6 +149,7 @@ map.on('load', () => {
     document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
             if(launch == 2020) {
+                //show all features (even without launch date)
                 map.setFilter('digitale-angebote-2', null);
             } else {
             map.setFilter('digitale-angebote-2', ['==', ['number', ['get', 'launch']], launch]);
