@@ -393,6 +393,13 @@ input:checked + .slider:before {
         font-size: 10pt;
         width: 150px;
     }
+    #timeslider {
+        top: 765px; 
+        width: 250px;
+    }
+    #min {
+        padding-right: 275px;
+    }
     /* Safari 11+ */
     @media not all and (min-resolution:.001dpcm)
     { @supports (-webkit-appearance:none) and (stroke-color:transparent) { 
