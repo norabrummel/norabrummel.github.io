@@ -158,6 +158,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         });
     });
 });
+/* funtionality of timeslider */
 function timeslide() {
    document.getElementById('timeslider').addEventListener('input', function(e) {
             var launch = parseInt(e.target.value);
