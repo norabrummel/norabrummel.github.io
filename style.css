@@ -242,7 +242,7 @@ input:checked + .slider:before {
 .panel p {
     cursor: default;
     font-size: 13px;
-    height: 150px;
+    height: 110px;
 }
 .panel p:hover {
     opacity: 1 !important;
