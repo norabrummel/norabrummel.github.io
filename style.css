@@ -314,6 +314,7 @@ input:checked + .slider:before {
 #events {
     /*background-color: #8944e9;*/
     color: #8944e9;
+    border-bottom: 1px dotted #8944e9;
     margin: 0px 10px;
 }
  
