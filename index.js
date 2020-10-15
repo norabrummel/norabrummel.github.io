@@ -67,10 +67,17 @@ function renderListings(index, features) {
         features.forEach(function (feature) {
             var prop = feature.properties;
             var item = document.createElement('span');
-                item.innerHTML = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')</br>';
+                item.innerHTML ='<strong><a href="' + prop.link + '" target="_blank" class="link-listing">' + prop.project_title + '</a></strong> (' + prop.museum + ', ' + prop.launch + ')</br>';
                 listingEl.appendChild(item);
         });
     };
+    var featureCount = features.length;
+    const categoryTitle = document.getElementsByClassName('categoryTitle')[index];
+    /*var countDiv = document.createElement('div');
+    countDiv.innerHTML = ' (' + featureCount + ')';
+    categoryTitle.append(countDiv);*/
+    categoryTitle.innerHTML += ' (' + featureCount + ')';
+    
 }
 
 function filterBy(index, category) {

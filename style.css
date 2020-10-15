@@ -228,12 +228,12 @@ input:checked + .slider:before {
   padding: 0 18px;
   background-color: white;
   display: none;  
+  height: 200px;
+  overflow: scroll;
 }
 .panel span {
     cursor: default;
-    font-size: 13px;
-    height: 130px !important;
-    overflow: scroll !important;  
+    font-size: 13px;  
 }
 .panel span:hover {
     opacity: 1 !important;
@@ -252,6 +252,13 @@ input:checked + .slider:before {
     color: #537895;
 }
 .angebote-link:hover { 
+    color: #6897BB;
+}
+.link-listing {
+    text-decoration: none; 
+    color: #000;
+}
+.link-listing:hover {
     color: #6897BB;
 }
 #apps {
