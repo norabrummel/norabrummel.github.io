@@ -199,11 +199,12 @@ input:checked + .slider:before {
  
 .sidebar-content {
     position: absolute;
-    width: 95%;
+    width: 70%;
     height: 95%;
     font-size: 32px;
     padding-top: 17px;
     border-radius: 10px;
+    left: 10px;
 }
 .sidebar-content p {
     font-size: 15px;
@@ -331,7 +332,7 @@ input:checked + .slider:before {
 }
  
 .sidbear-toggle.left {
-    left: 10em !important;
+    left: 9.6em !important;
 }
  
 .sidbear-toggle:hover {
@@ -342,7 +343,7 @@ input:checked + .slider:before {
 .sidebar {
     transition: transform 1s;
     z-index: 1;
-    width: 300px;
+    width: 400px;
     height: 100%;
     overflow: scroll;
 }
