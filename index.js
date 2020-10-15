@@ -66,8 +66,8 @@ function renderListings(index, features) {
     if (features.length) {
         features.forEach(function (feature) {
             var prop = feature.properties;
-            var item = document.createElement('p');
-            item.textContent = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')';
+            var item = document.createElement('span');
+            item.innerHTML = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')</br>';
             listingEl.appendChild(item);
         });
     };

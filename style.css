@@ -236,15 +236,15 @@ input:checked + .slider:before {
 .panel {
   padding: 0 18px;
   background-color: white;
-  display: none;
-  overflow: scroll;   
+  display: none;  
 }
-.panel p {
+.panel span {
     cursor: default;
     font-size: 13px;
     height: 110px;
+    overflow: scroll;  
 }
-.panel p:hover {
+.panel span:hover {
     opacity: 1 !important;
 }
 #erkundungen {
