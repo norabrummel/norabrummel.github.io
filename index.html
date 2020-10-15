@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Digitale Angebote Deutscher Museen</title>
-        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-        <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-        <link href="style.css" rel="stylesheet" type="text/css"/>  
-    </head>
-    <body>
-        <header class=''>
-            <!-- landing area -->
-            <div id="teaser">
-                <div><p id="bg-copy-1">&copy; Ege Islekel</p></div>
-                <h1 id="title">Digitale Angebote Deutscher Museen</h1>
-                <a href="#map" id="anchor"><img src="dropdown-arrow.png" alt="dropdown" id="dd-arrow"></a>
-            </div>
-            <!-- nav bar with timeslider and switch -->
-            <div class='topBar'>
-                <div><a href="#teaser" id="logoIndex"><h3> Digitale Angebote Deutscher Museen </h3></a></div>
-                <!--<a href="https://github.com/norabrummel/norabrummel.github.io" target="_blank"><img src="GitHub-Mark-64px.png" alt="git" id="git"></a>-->
-                <div class="timeline">
-                    <p id="min">1998</p>
-                    <input id="timeslider" type="range" min="1998" max="2020" step="1" value="1998"/>
-                    <!--<span class="tooltiptext" id="active-count">Tooltip text</span>-->
-                    <p id="max">2020</p>
-                </div>
-                <div class="radioOption">
-                    <p>alle Museen</p>
-                    <label class="switch">
-                          <input type="checkbox" onchange="hideLayer()">
-                          <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="radioOption" id="alle-angebote">
-                    <p>alle Angebote</p>
-                    <label class="switch">
-                          <input type="checkbox" onchange="hideFilter()" id="switchAngebote">
-                          <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>        
-        </header>
-        <!-- map area -->
-        <div id="map"> 
-            <div id="left" class="sidebar flex-center left collapsed">
-                <!-- sidebar -->
-                <div class="sidebar-content rounded-rect ">
-                    <button class="accordion"><p id="erkundungen" onclick="filterBy('Virtuelle Ausstellungen, Erkundungen & Rundgänge')">Virtuelle Ausstellungen, Erkundungen &amp; Rundgänge</p></button>
-                    <div class="panel">
-                      
-                    </div>
-                    <button class="accordion"><p id="apps" onclick="filterBy('Apps & Spiele')">Apps &amp; Spiele</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="kurse" onclick="filterBy('Onlinekurs ')">Onlinekurse</p></button>
-                    <div class="panel">
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    </div>
-                    <button class="accordion"><p id="sammlungen" onclick="filterBy('Digitale Sammlungen & Archive')">Digitale Sammlungen &amp; Archive</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="podcasts" onclick="filterBy('Podcasts, Audioguides & Hörspiele')">Podcasts, Audioguides &amp; Hörspiele</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="portale" onclick="filterBy('Online-Portal')">Online-Portale</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="projekte" onclick="filterBy('Online-Projekt')">Online-Projekte</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="videos" onclick="filterBy('Videos & Filme')">Videos &amp; Filme </p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="publikationen" onclick="filterBy('Digitale Publikation ')">Digitale Publikationen</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                    <button class="accordion"><p id="events" onclick="filterBy('Online-Events')">Online-Events</p></button>
-                    <div class="panel">
-                      <p>test</p>
-                    </div>
-                </div>
-                <div
-                    class="sidbear-toggle rounded-rect left"
-                    onclick="toggleSidebar('left')"
-                    >
-                    &rarr;
-                    </div>
-            </div>    
+  <head>
+    <meta charset="utf-8" />
+    <title>Digitale Angebote Deutscher Museen</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <header class=''>
+      <!-- landing area -->
+      <div id="teaser">
+        <div>
+          <p id="bg-copy-1">&copy; Ege Islekel</p>
         </div>
-        <script src="index.js"></script>  
-    </body>
+        <h1 id="title">Digitale Angebote Deutscher Museen</h1>
+        <a href="#map" id="anchor"><img src="dropdown-arrow.png" alt="dropdown" id="dd-arrow"></a>
+      </div>
+      <!-- nav bar with timeslider and switch -->
+      <div class='topBar'>
+        <div>
+          <a href="#teaser" id="logoIndex">
+            <h3> Digitale Angebote Deutscher Museen </h3>
+          </a>
+        </div>
+        <!--<a href="https://github.com/norabrummel/norabrummel.github.io" target="_blank"><img src="GitHub-Mark-64px.png" alt="git" id="git"></a>-->
+        <div class="timeline">
+          <p id="min">1998</p>
+          <input id="timeslider" type="range" min="1998" max="2020" step="1" value="1998"/>
+          <!--<span class="tooltiptext" id="active-count">Tooltip text</span>-->
+          <p id="max">2020</p>
+        </div>
+        <div class="radioOption">
+          <p>alle Museen</p>
+          <label class="switch">
+          <input type="checkbox" onchange="hideLayer()">
+          <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="radioOption" id="alle-angebote">
+          <p>alle Angebote</p>
+          <label class="switch">
+          <input type="checkbox" onchange="hideFilter()" id="switchAngebote">
+          <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+    <!-- map area -->
+    <div id="map">
+      <div id="left" class="sidebar flex-center left collapsed">
+        <!-- sidebar -->
+        <div class="sidebar-content rounded-rect ">
+          <button class="accordion">
+            <p id="erkundungen" onclick="filterBy(0, 'Virtuelle Ausstellungen, Erkundungen & Rundgänge')">
+              Virtuelle Ausstellungen, Erkundungen &amp; Rundgänge
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="apps" onclick="filterBy(1, 'Apps & Spiele')">
+              Apps &amp; Spiele
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="kurse" onclick="filterBy(2, 'Onlinekurs ')">
+              Onlinekurse
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="sammlungen" onclick="filterBy(3, 'Digitale Sammlungen & Archive')">
+              Digitale Sammlungen &amp; Archive
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="podcasts" onclick="filterBy(4, 'Podcasts, Audioguides & Hörspiele')">
+              Podcasts, Audioguides &amp; Hörspiele
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="portale" onclick="filterBy(5, 'Online-Portal')">
+              Online-Portale
+            </p>
+          </button>
+          <div class="panel">
+            <p>test</p>
+          </div>
+          <button class="accordion">
+            <p id="projekte" onclick="filterBy(6, 'Online-Projekt')">
+              Online-Projekte
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="videos" onclick="filterBy(7, 'Videos & Filme')">
+              Videos &amp; Filme
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="publikationen" onclick="filterBy(8, 'Digitale Publikation ')">
+              Digitale Publikationen
+            </p>
+          </button>
+          <div class="panel"></div>
+          <button class="accordion">
+            <p id="events" onclick="filterBy(9, 'Online-Events')">
+              Online-Events
+            </p>
+          </button>
+          <div class="panel"></div>
+        </div>
+        <div
+          class="sidbear-toggle rounded-rect left"
+          onclick="toggleSidebar('left')"
+          >
+          &rarr;
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>  
+  </body>
 </html>

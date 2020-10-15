@@ -58,24 +58,22 @@ for (i = 0; i < acc.length; i++) {
   });
 };
 
-/* The Problem: I want to implement an accordion for the different categories in the sidebar that toggles a list of all the features in the respective category. 
+// The Problem: I want to implement an accordion for the different categories in the sidebar that toggles a list of all the features in the respective category. 
 
-var listingEl = document.getElementsByClassName('panel');
-
-function renderListings(features) {
+function renderListings(index, features) {
+    const listingEl = document.getElementsByClassName('panel')[index];
     listingEl.innerHTML = '';
     if (features.length) {
         features.forEach(function (feature) {
-        var prop = feature.properties;
-        var item = document.createElement('p');
-        item.textContent = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')';
-    });
-    listingEl.appendChild(item);
-    });   
+            var prop = feature.properties;
+            var item = document.createElement('p');
+            item.textContent = prop.project_title + ' (' + prop.museum + ', ' + prop.launch + ')';
+            listingEl.appendChild(item);
+        });
+    };
 }
-*/
 
-function filterBy(category) {
+function filterBy(index, category) {
    map.setFilter('digitale-angebote-2', ['==', ['string', ['get', 'category']], category]); 
    map.flyTo({
       center: [10.348, 51.358], // starting position [lng, lat]
@@ -88,12 +86,12 @@ function filterBy(category) {
     if ( popup.length ) {
         popup[0].remove();
     }
-    /*
+    
     var features = map.queryRenderedFeatures({ layers: ['digitale-angebote-2'] });
     if (features) {
         // Populate features for the listing overlay.
-        renderListings(features);
-    }*/
+        renderListings(index, features);
+    }
 } 
 
 map.addControl(new mapboxgl.NavigationControl());
