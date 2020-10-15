@@ -71,14 +71,6 @@ function renderListings(index, features) {
                 listingEl.appendChild(item);
         });
     };
-    /*
-    var featureCount = features.length;
-    const categoryTitle = document.getElementsByClassName('categoryTitle')[index];
-    var countDiv = document.createElement('div');
-    countDiv.innerHTML = ' (' + featureCount + ')';
-    categoryTitle.append(countDiv);
-    categoryTitle.innerHTML += ' (' + featureCount + ')';*/
-    
 }
 
 function filterBy(index, category) {
