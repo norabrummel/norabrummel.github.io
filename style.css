@@ -29,15 +29,6 @@ body {
     padding-top: 200px;
     font-weight: 700;   
 }
-/*#git{
-    width: 20px;
-    display: flex;
-    flex-direction: row;
-    position: inherit;
-    float: left;
-    left: 600px;
-    top: 20px;
-}*/
 #teaser{
     margin: 0 auto;
     height: 700px;
@@ -241,8 +232,8 @@ input:checked + .slider:before {
 .panel span {
     cursor: default;
     font-size: 13px;
-    height: 110px;
-    overflow: scroll;  
+    height: 130px !important;
+    overflow: scroll !important;  
 }
 .panel span:hover {
     opacity: 1 !important;
@@ -327,10 +318,11 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     font-size: 32px;
+    z-index: 0 !important;
 }
  
 .sidbear-toggle.left {
-    right: -1.5em;
+    left: 10em !important;
 }
  
 .sidbear-toggle:hover {
