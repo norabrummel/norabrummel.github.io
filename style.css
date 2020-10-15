@@ -229,7 +229,9 @@ input:checked + .slider:before {
   background-color: white;
   display: none;  
   height: 200px;
-  overflow: scroll;
+  overflow: scroll;   
+  margin: 0px 10px; 
+  border-bottom: 1px dotted lightgrey;
 }
 .panel span {
     cursor: default;
